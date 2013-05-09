@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Your Gateway to Simplified QA/QC</h1>
+            </hgroup>
+            <p>
+                These tools are intended to simplify the design calculations for civil roadway projects requiring ODOT specific design standards.  Currently, the sign
+                design tool is available.  Check back soon for additional capabilities!
+            </p>
+        </div>
+    </section>
+}
+<input id="myUrl" type='hidden' value='@Url.Action("GenerateSignPost", "Home")' />
+
+<h3>Welcome to Sign Design Tool of the Transportation Efficiency Suite!</h3>
+<h3>Please provide the following information about your sign:</h3>
+
+
+<div>
+    <table id="InputTable" border ="0">
+        <tr style="text-align:center">
+            <td>
+                <span>Road Classification</span>
+            </td>
+            <td>
+                <span>Height (in)</span>
+            </td>
+            <td></td>
+            <td>
+                <span>Width (in)</span>
+            </td>
+            <td>
+                <span>Sign ID</span>
+            </td>
+            <td>
+                <span>Diamond Orientation?</span>
+            </td>
+
+        </tr>
+
+        <tr style="text-align:center">
+            <td>
+                <select id="functionalClassification" style="width: 200px;">
+                    <option value="UrbanResidential">Urban-Residential</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </td>
+            <td>
+                <input id="Height" maxlength="2" style="width:25px;"/>
+            </td>
+            <td>
+                <span >x</span>
+            </td>
+            <td>
+                <input id="Width" maxlength="2" style="width:25px"/>
+            </td>
+            <td>
+                <input id="signID" style="width:80px"/>
+            </td>
+            <td>
+                <input id="IsDiamond" type="checkbox" />
+            </td>
+            <td>
+                <button id="add" onclick="addSign()">Add</button>
+            </td>
+        </tr>
+
+
+    </table>
+
+</div>
+<h5>The following are the post length and post type for your signs:</h5>
+<div class="buttonSpace" id="UserSigns">
+    <ul id="UserProvidedSignID" style="list-style-type:none"></ul>
+</div>
+<div class="buttonSpace">
+    <button onclick="RemoveAll()">Clear List</button>
+</div>
