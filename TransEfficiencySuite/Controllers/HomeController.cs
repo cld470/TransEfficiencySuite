@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TransEfficiencySuite.Models;
+using TransEfficiencySuite.Helpers;
 using System.Collections;
 using System.Web.Script.Serialization;
 
@@ -31,7 +32,7 @@ namespace TransEfficiencySuite.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "ODOT Information";
 
             return View();
         }
@@ -39,9 +40,10 @@ namespace TransEfficiencySuite.Controllers
         [HttpPost]
         public ActionResult GenerateSignPost(Sign userSign)
         {
-
+            string PostLength = SignComputation.TotalPostLength(userSign.Classification, userSign.Height, userSign.DiamondOrientation);
+            string PostType = SignComputation.SignPostType(userSign.Area, userSign.Height, userSign.Classification, userSign.DiamondOrientation);
                         
-            return Json(new { PostLength = "5", PostType = "Type 3" });
+            return Json(new { PostLength, PostType = PostType });
         }
     }
 }

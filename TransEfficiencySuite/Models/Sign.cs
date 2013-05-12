@@ -13,13 +13,5 @@ namespace TransEfficiencySuite.Models
         public string DiamondOrientation { get; set; }
         public string Height { get; set; }
         public string SignType { get; set; }
-
-        public Sign()
-        {
-            Classification = "";
-            Area = "";
-            DiamondOrientation = "false";
-            Height = "";
-        }
     }
 }

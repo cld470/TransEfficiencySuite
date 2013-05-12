@@ -47,6 +47,7 @@
         <tr style="text-align:center">
             <td>
                 <select id="functionalClassification" style="width: 200px;">
+                    <option value="Freeway">Freeway</option>
                     <option value="UrbanResidential">Urban-Residential</option>
                     <option value="Rural">Rural</option>
                 </select>
@@ -77,8 +78,15 @@
 </div>
 <h5>The following are the post length and post type for your signs:</h5>
 <div class="buttonSpace" id="UserSigns">
+    <ul style="list-style-type:none">
+        <li class="sign"><div class="signList"><span style="font-weight:bold">Sign ID</span></div><div class="signList"><span style="font-weight:bold">Post Length (FT)</span></div><div class="signList"><span style="font-weight:bold">Post Type</span></div></li>
+    </ul>
+
+</div>
+<div class="buttonSpace" id="UserSigns">
     <ul id="UserProvidedSignID" style="list-style-type:none"></ul>
 </div>
 <div class="buttonSpace">
     <button onclick="RemoveAll()">Clear List</button>
 </div>
+
